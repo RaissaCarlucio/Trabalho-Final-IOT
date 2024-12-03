@@ -7,7 +7,7 @@ Este é um sistema IoT desenvolvido para monitoramento da velocidade do vento e 
 - **Python**: Linguagem de programação utilizada para implementar a lógica do sistema.
 - **Paho MQTT**: Biblioteca utilizada para comunicação entre os dispositivos IoT via protocolo MQTT.
 - **Broker MQTT (Mosquitto)**: Broker público de MQTT utilizado para comunicação dos dados entre os dispositivos.
-- **MQTT Explorer**: Ferramenta gráfica utilizada para explorar e monitorar tópicos MQTT, facilitando o teste e visualização das mensagens publicadas.
+- **Node Red**: Ferramenta gráfica utilizada para explorar e monitorar tópicos MQTT, facilitando o teste e visualização das mensagens publicadas.
 
 ## Funcionalidade
 
@@ -16,10 +16,10 @@ O sistema coleta dados sobre a velocidade do vento a partir de um sensor (anemô
 ### Fluxo do Sistema:
 
 1. **Conexão com o Broker MQTT**: O cliente MQTT se conecta ao broker público `test.mosquitto.org` na porta padrão `1883`.
-2. **Coleta de Dados de Vento**: O sistema gera valores aleatórios de velocidade do vento entre 1 e 15 m/s (representando a entrada de dados do anemômetro).
+2. **Coleta de Dados de Vento**: O sistema gera valores aleatórios de velocidade do vento entre 1 e 150 km/s(No caso está de 1 a 15 para simpli (representando a entrada de dados do anemômetro).
 3. **Publicação de Dados**: O valor da velocidade do vento é publicado em um tópico MQTT específico: `srs/inatel/sec/c115/vento/eolica`.
 4. **Controle de Hélices**: Com base no valor do vento:
-    - Se o vento for maior ou igual a 10 m/s, o sistema simula a redução da velocidade das hélices.
+    - Se o vento for maior ou igual a 100 km/s (No caso está 10 no código para simplificar o entendimento), o sistema simula a redução da velocidade das hélices.
     - Caso contrário, o sistema informa que tudo está funcionando normalmente.
 5. **Execução Contínua**: O sistema continua executando, coletando e publicando dados a cada 5 segundos.
 
