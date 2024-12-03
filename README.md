@@ -16,7 +16,7 @@ O sistema coleta dados sobre a velocidade do vento a partir de um sensor (anemô
 ### Fluxo do Sistema:
 
 1. **Conexão com o Broker MQTT**: O cliente MQTT se conecta ao broker público `test.mosquitto.org` na porta padrão `1883`.
-2. **Coleta de Dados de Vento**: O sistema gera valores aleatórios de velocidade do vento entre 1 e 150 km/s(No caso está de 1 a 15 para simpli (representando a entrada de dados do anemômetro).
+2. **Coleta de Dados de Vento**: O sistema gera valores aleatórios de velocidade do vento entre 1 e 150 km/s(No caso está de 1 a 15 para simplificar o entendimento no código) representando a entrada de dados do anemômetro.
 3. **Publicação de Dados**: O valor da velocidade do vento é publicado em um tópico MQTT específico: `srs/inatel/sec/c115/vento/eolica`.
 4. **Controle de Hélices**: Com base no valor do vento:
     - Se o vento for maior ou igual a 100 km/s (No caso está 10 no código para simplificar o entendimento), o sistema simula a redução da velocidade das hélices.
